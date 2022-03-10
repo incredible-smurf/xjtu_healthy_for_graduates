@@ -10,9 +10,6 @@ Use github action to help you complete the dummy daily health report.
 4. The job will also be triggered on push action.
 5. You may need to run the action manually once to trigger the daily task.
 
-## Todo
-
-- [ ] add graduate student check-in support
 
 ## Declaration
 

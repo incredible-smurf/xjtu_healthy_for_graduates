@@ -1,6 +1,7 @@
 # healthy-xjtuer
 
 Use github action to help you complete the dummy daily health report.
+Can be used in 14-03-22
 
 ## Usage
 
@@ -9,7 +10,7 @@ Use github action to help you complete the dummy daily health report.
 3. The check-in task will be automatically executed at 12:00 UTC+8. It could be modified in [check-in.yml](.github/workflows/check-in.yml).
 4. The job will also be triggered on push action.
 5. You may need to run the action manually once to trigger the daily task.
-
+6. When workflow fails, you will get an email for informing
 
 ## Declaration
 

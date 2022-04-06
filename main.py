@@ -1,7 +1,7 @@
 #coding=utf-8
 import logging
 import os
-from random import random
+import random
 import time
 
 from dotenv import load_dotenv
@@ -92,7 +92,7 @@ def main():
         driver.switch_to.frame(iframe)
         iframe = driver.find_element_by_xpath("//iframe[@onload='__iframe_onload1()']")
         driver.switch_to.frame(iframe)
-        temp = str(round(36 + random(), 1))
+        temp = str(round(36 + random.random(), 1))
         driver.find_element_by_xpath(
             '//*[@id="BRTW$text"]'
         ).send_keys(temp)
@@ -100,14 +100,13 @@ def main():
         print('st 确认须知')
         driver.find_element_by_xpath('//*[@id="mini-2$ck$0"and @value="1"]').click()
         #确认须知
-        #driver.find_element_by_xpath('//input[@id="mini-11$ck$1" ]').click()
         
         #日期
         
         
         date = time.localtime(time.time()-8*3600)
 
-        send_date = str(date.tm_year)+'-'+str(date.tm_mon)+'-'+str(date.tm_mday)+" 18:31"
+        send_date = str(date.tm_year)+'-'+str(date.tm_mon)+'-'+str(date.tm_mday)+" 13:31"
 
         
         data_input = driver.find_element_by_xpath('//*[@id="ZJYCHSJCSJ$text"]')
@@ -115,11 +114,14 @@ def main():
         data_input.clear()
         data_input.send_keys(send_date)
 
-        
-        driver.find_element_by_xpath('//*[@id="mini-5$ck$0" and @value="是"]').click()
-        driver.find_element_by_xpath('//*[@id="mini-10$ck$1" and @value="阴性"]').click()
-        driver.find_element_by_xpath('//*[@id="mini-11$ck$0" and @value="未被隔离"]').click()
-        driver.find_element_by_xpath('//*[@id="mini-12$ck$2" and @value="绿色"]').click()
+        driver.find_element_by_xpath('//*[@id="mini-4$ck$0" and @value="是"]').click()
+        time.sleep(random.uniform(1,2))
+        driver.find_element_by_xpath('//*[@id="mini-9$ck$1" and @value="阴性"]').click()
+        time.sleep(random.uniform(1,2))
+        driver.find_element_by_xpath('//*[@id="mini-10$ck$0" and @value="未被隔离"]').click()
+        time.sleep(random.uniform(1,2))
+        driver.find_element_by_xpath('//*[@id="mini-11$ck$2" and @value="绿色"]').click()
+        time.sleep(random.uniform(1,2))
         
 
         logger.info(f"Today's body temp. is {temp}")
